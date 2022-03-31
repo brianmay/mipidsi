@@ -160,7 +160,7 @@ where
     DELAY: DelayUs<u32>,
     DI: WriteOnlyDataCommand,
 {
-    let madctl = 0b0000_0000;
+    let madctl = 0b0000_1000;
 
     write_command(di, Instruction::SLPOUT, &[])?; // turn off sleep
     write_command(di, Instruction::COLMOD, &[0b0110_0110])?; // 18bit 256k colors
